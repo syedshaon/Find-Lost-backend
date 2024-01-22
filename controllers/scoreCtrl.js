@@ -39,10 +39,14 @@ const scoreController = {
       }
 
       // Update the fields if provided in the request body
+      if (playerName) {
+        score.playerName = playerName;
+      }
 
-      score.playerName = playerName;
-
-      score.endTime = new Date().toLocaleString();
+      // Update endTime only if it doesn't already exist
+      if (!score.endTime) {
+        score.endTime = new Date().toLocaleString();
+      }
 
       // Save the updated score
       await score.save();
