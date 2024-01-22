@@ -16,9 +16,13 @@ const OriginCheck = (req, res, next) => {
 };
 
 // Insert a new score
-router.post("/scores", OriginCheck, scoreController.insertScore);
+// router.post("/scores", OriginCheck, scoreController.insertScore);
 
 // Retrieve all scores
 router.get("/scores", OriginCheck, scoreController.retrieveScores);
+
+router.post("/game-start", OriginCheck, scoreController.gameStart);
+
+router.put("/score-update", OriginCheck, scoreController.updateScore);
 
 module.exports = router;

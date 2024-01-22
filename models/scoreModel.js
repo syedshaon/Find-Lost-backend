@@ -4,15 +4,19 @@ const Schema = mongoose.Schema;
 const scoreSchema = new Schema({
   playerName: {
     type: String,
-    required: true,
+    required: false,
   },
   gameName: {
     type: String,
     required: true,
   },
-  time: {
+  startTime: {
     type: String,
     required: true,
+  },
+  endTime: {
+    type: String,
+    required: false,
   },
 });
 
