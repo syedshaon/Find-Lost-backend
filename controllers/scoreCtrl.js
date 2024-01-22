@@ -88,7 +88,7 @@ const scoreController = {
   async retrieveScores(req, res) {
     try {
       // Retrieve all scores from the database
-      const scores = await Score.find({ endTime: { $ne: null } });
+      const scores = await Score.find({ playerName: { $ne: null } });
 
       res.status(200).json(scores);
     } catch (error) {
